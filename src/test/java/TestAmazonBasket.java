@@ -36,10 +36,10 @@ public class TestAmazonBasket extends SteviaTestBase {
         Utilities.checkElementPresent(AmazonLoginPage.AmazonLoginPageLocators.TITLE.get());
 
         //Login to Amazon
-        loginPage.LoginToAmazon();
-        Thread.sleep(1000);
+        loginPage.login();
 
         //Verify Login is successful and user is redirected to next page
+        Thread.sleep(1000);
         amazonPage.checkLoginSuccess();
         Utilities.checkElementPresent(AmazonSparkPage.AmazonSparkPageLocators.HEAD.get());
 

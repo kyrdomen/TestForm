@@ -9,10 +9,8 @@ public class AmazonCardPage extends WebComponent {
 
         PROCEED_CHECKOUT_BTN("//*[@id=\"sc-buy-box-ptc-button\"]/span/input"),
         SUBTOTAL("//*[@id=\"gutterCartViewForm\"]/div[3]/div/div/div[1]/p/span/span[2]"),
-        PRODUCT_PRICE("//*[@id=\"activeCartViewForm\"]/div[1]/div[1]/div[2]/div/div/div/div[4]/div/div[2]/p/span"),
         DELETE_PRODUCT("//*[@id=\"activeCartViewForm\"]/div[1]/div[1]/div[2]/div/div/div/div[4]/div/div[1]/div/div/div[2]/div/span[1]/span/input");
-
-
+      
         private String myLocator;
 
         AmazonCardPageLocators(String locator) {
@@ -27,7 +25,6 @@ public class AmazonCardPage extends WebComponent {
 
     public void checkPriceInCard(String price) {
         SteviaContext.verify().equal(price, (controller().getText(AmazonCardPageLocators.SUBTOTAL.get())));
-        SteviaContext.verify().equal(price, (controller().getText(AmazonCardPageLocators.PRODUCT_PRICE.get())));
     }
 
     public void deleteProduct() {

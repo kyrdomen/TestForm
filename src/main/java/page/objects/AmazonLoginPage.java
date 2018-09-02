@@ -4,8 +4,8 @@ import com.persado.oss.quality.stevia.selenium.core.WebComponent;
 
 public class AmazonLoginPage extends WebComponent {
 
-    static String User_Name = "gr.istqb@gmail.com";
-    static String Password = "PERSADO";
+    private String User_Name = "gr.istqb@gmail.com";
+    private String Password = "PERSADO";
 
     public enum AmazonLoginPageLocators {
         TITLE("//*[@id=\"authportal-main-section\"]/div[2]/div/div/form/div/div/div/h1"),
@@ -27,7 +27,7 @@ public class AmazonLoginPage extends WebComponent {
     }
 
 
-    public void LoginToAmazon() {
+    public void login() {
         controller().input(AmazonLoginPageLocators.EMAIL.get(), User_Name);
         controller().input(AmazonLoginPageLocators.PASSWORD.get(), Password);
         controller().pressAndWaitForPageToLoad(AmazonLoginPageLocators.BTN.get());
