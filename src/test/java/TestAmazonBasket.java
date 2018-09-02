@@ -1,6 +1,8 @@
 import com.persado.oss.quality.stevia.spring.SteviaTestBase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import page.objects.*;
 
@@ -78,11 +80,15 @@ public class TestAmazonBasket extends SteviaTestBase {
         Utilities.checkElementPresent(AmazonCardPage.AmazonCardPageLocators.PROCEED_CHECKOUT_BTN.get());
 
         //Verify Product price on basket list
-        cardPage.checkPriceInCard(price);
+        Assert.assertEquals( cardPage.returnPriceinCard() , price);
 
-        //Delete product in basket
+    }
+
+    @AfterTest
+    public void EmptyBasket(){
         cardPage.deleteProduct();
     }
+
 
 }
 
