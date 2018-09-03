@@ -29,8 +29,7 @@ public class TestAmazonBasket extends SteviaTestBase {
 
 
     @Test
-    public void AmazonSelectDealsOfTheDay() throws InterruptedException {
-
+    public void amazonInterestingFinds() throws InterruptedException {
         //Go to Amazon Home Page and click on Amazon Deals
         amazonPage.clickElement(MainNavigationBar.AmazonHomePageLocators.AMAZON_DEAL_OF_THE_DAY_DETAILS.get());
 
@@ -80,12 +79,12 @@ public class TestAmazonBasket extends SteviaTestBase {
         Utilities.checkElementPresent(AmazonCardPage.AmazonCardPageLocators.PROCEED_CHECKOUT_BTN.get());
 
         //Verify Product price on basket list
-        Assert.assertEquals( cardPage.returnPriceinCard() , price);
+        Assert.assertEquals(cardPage.returnPriceinCard(), price);
 
     }
 
     @AfterTest
-    public void EmptyBasket(){
+    public void EmptyBasket() {
         cardPage.deleteProduct();
     }
 

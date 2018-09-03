@@ -28,6 +28,7 @@ public class AmazonCardPage extends WebComponent {
     }
 
     public void deleteProduct() {
+        controller().waitForElement(AmazonCardPageLocators.DELETE_PRODUCT.get());
         controller().click(AmazonCardPageLocators.DELETE_PRODUCT.get());
     }
 }
