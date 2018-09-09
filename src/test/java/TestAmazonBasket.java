@@ -1,4 +1,5 @@
 import com.persado.oss.quality.stevia.spring.SteviaTestBase;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.testng.Assert;
@@ -28,7 +29,7 @@ public class TestAmazonBasket extends SteviaTestBase {
     AmazonCardPage cardPage;
 
 
-    @Test
+    @Ignore
     public void amazonInterestingFinds() throws InterruptedException {
         //Go to Amazon Home Page and click on Amazon Deals
         amazonPage.clickElement(MainNavigationBar.AmazonHomePageLocators.AMAZON_DEAL_OF_THE_DAY_DETAILS.get());
@@ -83,6 +84,7 @@ public class TestAmazonBasket extends SteviaTestBase {
 
     }
 
+    @Ignore
     @AfterTest
     public void EmptyBasket() {
         cardPage.deleteProduct();

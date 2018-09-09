@@ -4,7 +4,9 @@
 
     <parameter name="rcHost" value="localhost"/>
 
-    <parameter name="targetHostUrl" value="http://www.amazon.com"/>
+    <parameter name="targetHostUrl" value="http://qa-test.pjbeagle.io/"/>
+    !value="http://www.amazon.com"/>
+
     <parameter name="debugging" value="true"/>
     <parameter name="browser" value="chrome"/>
     <parameter name="profile" value=""/>
@@ -19,7 +21,8 @@
 
     <test name="Stevia Test" preserve-order="true">
         <classes>
-            <class name="TestAmazonBasket"/>
+
+            <class name="TestForm"/>
         </classes>
     </test>
 

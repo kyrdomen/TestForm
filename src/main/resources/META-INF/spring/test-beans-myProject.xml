@@ -13,5 +13,6 @@
     <bean id="findsPage" class="page.objects.AmazonFindsPage"/>
     <bean id="detailsPage" class="page.objects.AmazonProductDetailsPage"/>
     <bean id="cardPage" class="page.objects.AmazonCardPage"/>
+    <bean id="formPage" class="page.objects.FormPage"/>
 
 </beans>
